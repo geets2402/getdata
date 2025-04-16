@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .cards{
+        width: 200px;
+        border: solid black 1px;
+        padding: 10px;
+        margin: 5px;
+        align-content: center;
+        justify-items: center;
+        background-color: antiquewhite;
+        
+    }
+    #container{
+        align-content: center;
+        justify-items: center;
+
+    }
+    button{
+       
+        width: 70px;
+        background-color: aquamarine;
+        border: 1px solid black;
+    }
+    
+    
+</style>
+<body>
+   <center><button onclick="getdata(employees)"> GetData</button></center>
+    <div id="container">
+        
+    </div>
+    
+    
+
+<script>
+    const employees = [
+  { name: "Alice Johnson", designation: "UI/UX Designer", salary: 68000, isPermanent: true ,},
+  { name: "Bob Smith", designation: "Web Developer", salary: 72000, isPermanent: false },
+  { name: "Charlie Adams", designation: "Project Manager", salary: 85000, isPermanent: true },
+  { name: "Diana King", designation: "QA Engineer", salary: 60000, isPermanent: true },
+  { name: "Ethan Brooks", designation: "DevOps Engineer", salary: 78000, isPermanent: false },
+  { name: "Fiona Scott", designation: "Product Owner", salary: 90000, isPermanent: true },
+  { name: "George Lee", designation: "Backend Developer", salary: 74000, isPermanent: true },
+  { name: "Hannah Wright", designation: "Frontend Developer", salary: 71000, isPermanent: false },
+  { name: "Ian Clark", designation: "Data Analyst", salary: 67000, isPermanent: true },
+  { name: "Jane Foster", designation: "Scrum Master", salary: 83000, isPermanent: true },
+  { name: "Kevin Ross", designation: "Mobile App Developer", salary: 76500, isPermanent: false },
+  { name: "Laura Young", designation: "Content Strategist", salary: 62000, isPermanent: true },
+  { name: "Mike Davis", designation: "Full Stack Developer", salary: 79000, isPermanent: true },
+  { name: "Nina Turner", designation: "Graphic Designer", salary: 58000, isPermanent: false },
+  { name: "Oscar Perez", designation: "System Administrator", salary: 75000, isPermanent: true },
+  { name: "Paula Reed", designation: "Marketing Specialist", salary: 61000, isPermanent: false },
+  { name: "Quentin Hall", designation: "Cloud Architect", salary: 93000, isPermanent: true },
+  { name: "Rachel Green", designation: "Business Analyst", salary: 69000, isPermanent: true },
+  { name: "Steve Baker", designation: "Security Analyst", salary: 87000, isPermanent: false },
+  { name: "Tina Moore", designation: "Tech Lead", salary: 95000, isPermanent: true }
+];
+function getdata(data){
+   
+    let container=document.getElementById("container");
+    data.slice(0,11).forEach(item=>{
+        let cards=document.createElement("div");
+        cards.innerHTML=`<h2>${item.name}</h2>  <h4>${item.designation}</h4>
+        <h4> ${item.salary}</h4> <h3>${item.isPermanent}</h3> `;
+        cards.setAttribute("class","cards")
+        container.append(cards);
+    });
+}
+
+</script>
+</body>
+</html>
